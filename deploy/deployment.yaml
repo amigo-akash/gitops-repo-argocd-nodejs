@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: node
-          image: akashacharya/test-build-nodejs:84838ffe76c716af91b81b4967b81e93b0e5c270
+          image: akashacharya/test-build-nodejs:7df32e76b6a603b15925e931841067f0404c0feb
           ports:
             - containerPort: 4000
