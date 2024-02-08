@@ -7,8 +7,5 @@ jobs:
   update-image:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
       - name: call the custom github action
         uses: docker://akashacharya/test-github-actions:latest
