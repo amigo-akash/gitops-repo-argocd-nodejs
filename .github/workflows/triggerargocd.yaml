@@ -8,4 +8,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: call the custom github action
+        id: hello
         uses: docker://akashacharya/test-github-actions:latest
