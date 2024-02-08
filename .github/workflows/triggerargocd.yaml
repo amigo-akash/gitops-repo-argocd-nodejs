@@ -1,22 +1,14 @@
-name: Update Image in the Kube.yaml
-permissions:
-  #id-token: write # This is required for requesting the JWT
-  contents: write  # This is required for actions/checkout
+name: Test the custom github action
 on:
-  repository_dispatch:
-    types: [update-image]
+  push:
+    branches:
+      - main
 jobs:
   update-image:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - name: Update Image Version kube.yaml
-        uses: fjogeleit/yaml-update-action@main
-        with:
-          valueFile: 'deploy/deployment.yaml'
-          propertyPath: 'spec.template.spec.containers[0].image'
-          value: akashacharya/${{ github.event.client_payload.image }}
-          branch: main
-          message: "Update Image Version to ${{ github.event.client_payload.image }}"
+      - name: call the custom github action
+        uses: docker://amigo-akash/test-github-action:latest
