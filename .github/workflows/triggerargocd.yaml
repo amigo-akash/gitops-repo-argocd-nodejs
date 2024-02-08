@@ -11,4 +11,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: call the custom github action
-        uses: docker://amigo-akash/test-github-action:latest
+        uses: docker://amigo-akash/test-github-actions:latest
