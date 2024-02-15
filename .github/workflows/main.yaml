@@ -1,4 +1,4 @@
-name: Test the custom github action
+name: Test the custom harness-cd github action
 env: 
   DEPLOYMENT_ID: 1293300321
   GITHUB_SHA: 45291f58cbf91f0eb540b4bd7c292e66704f1956
