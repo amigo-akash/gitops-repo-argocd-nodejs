@@ -2,7 +2,7 @@ name: Test the custom github action
 on:
   push:
     branches:
-      - main
+      - test
 jobs:
   update-image:
     runs-on: ubuntu-latest
