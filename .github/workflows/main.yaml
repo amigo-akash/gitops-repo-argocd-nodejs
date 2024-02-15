@@ -1,8 +1,8 @@
 name: custom harness-cd github action
 env: 
-  DEPLOYMENT_ID: 1293300321
-  GITHUB_SHA: 45291f58cbf91f0eb540b4bd7c292e66704f1956
-  PR_NUMBER: 10
+  DEPLOYMENT_ID: 1293300876
+  GITHUB_SHA: 45291f58cbf91f0eb540b4bd7c29
+  PR_NUMBER: 12
 on:
   push:
     branches:
