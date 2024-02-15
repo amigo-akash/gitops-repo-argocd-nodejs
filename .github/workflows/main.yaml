@@ -1,0 +1,26 @@
+name: Test the custom github action
+env: 
+  DEPLOYMENT_ID: 1293300321
+  GITHUB_SHA: 45291f58cbf91f0eb540b4bd7c292e66704f1956
+  PR_NUMBER: 10
+on:
+  push:
+    branches:
+      - main
+jobs:
+  update-image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: call the custom github action
+        id: hello
+        uses: docker://akashacharya/test-harness-invoker-ng:latest
+        with:
+          HARNESS_ENDPOINT: ${{ secrets.GRID_HARNESS_ENDPOINT }}
+          HARNESS_API_KEY: ${{ secrets.GRID_HARNESS_API_KEY }}
+          ACCOUNT_ID: ${{ secrets.HARNESS_ACCOUNT_ID }}
+          PROJECT_ID: ${{ secrets.HARNESS_PROJECT_ID }}
+          ORGANIZATION_ID: ${{ secrets.HARNESS_ORGANIZATION_ID }}
+          DEPLOYMENT_ID: ${{ env.DEPLOYMENT_ID }}
+          GITHUB_SHA: ${{ env.GITHUB_SHA }}
+          PR_NUMBER: ${{ env.PR_NUMBER }}
+          PIPELINE_NAME: akash-test-pipeline
