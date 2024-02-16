@@ -2,7 +2,7 @@ name: custom harness-cd github action
 env: 
   GITHUB_SHA: 45291f58cbf91f0eb540b4bd7c29
   PR_NUMBER: 12
-  ENVIRONMENT: uat
+  ENVIRONMENT: test
 on:
   push:
     branches:
