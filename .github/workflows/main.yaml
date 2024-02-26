@@ -24,14 +24,17 @@ jobs:
         id: harness-deployment
         uses: docker://akashacharya/test-harness-invoker-ng:latest
         with:
-          HARNESS_ENDPOINT: ${{ secrets.GRID_HARNESS_ENDPOINT }}
-          HARNESS_API_KEY: ${{ secrets.GRID_HARNESS_API_KEY }}
-          ACCOUNT_ID: ${{ secrets.HARNESS_ACCOUNT_ID }}
-          PROJECT_ID: ${{ secrets.HARNESS_PROJECT_ID }}
-          ORGANIZATION_ID: ${{ secrets.HARNESS_ORGANIZATION_ID }}
-          DEPLOYMENT_ID: ${{ steps.deployment.outputs.deployment_id }}
-          GITHUB_SHA: ${{ env.GITHUB_SHA }}
-          PR_NUMBER: ${{ env.PR_NUMBER }}
+          # HARNESS_ENDPOINT: ${{ secrets.GRID_HARNESS_ENDPOINT }}
+          # HARNESS_API_KEY: ${{ secrets.GRID_HARNESS_API_KEY }}
+          # ACCOUNT_ID: ${{ secrets.HARNESS_ACCOUNT_ID }}
+          # PROJECT_ID: ${{ secrets.HARNESS_PROJECT_ID }}
+          # ORGANIZATION_ID: ${{ secrets.HARNESS_ORGANIZATION_ID }}
+          # DEPLOYMENT_ID: ${{ steps.deployment.outputs.deployment_id }}
+          # GITHUB_SHA: ${{ env.GITHUB_SHA }}
+          # PR_NUMBER: ${{ env.PR_NUMBER }}
+          # PIPELINE_NAME: akash-test-pipeline
+          GITHUB_SHA: 
+          PR_NUMBER: ""
           PIPELINE_NAME: akash-test-pipeline
       - name: Harness workflow or pipeline outcome
         if: ${{ steps.deployments.outputs.execution_status == 'RUNNING' }} | ${{ steps.deployments.outputs.execution_status == 'PAUSED' }}
